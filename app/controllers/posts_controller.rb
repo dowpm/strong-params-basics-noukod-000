@@ -7,6 +7,10 @@ class PostsController < ApplicationController
 		@post = Post.find(params[:id])
 	end
 
+	def edit
+	  @post = Post.find(params[:id])
+	end
+
 	def new
 		@post = Post.new
 	end
@@ -34,7 +38,5 @@ class PostsController < ApplicationController
 	  params.require(:post).permit(*args)
 	end
 
-	def edit
-	  @post = Post.find(params[:id])
-	end
+	
 end
